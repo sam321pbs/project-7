@@ -247,8 +247,6 @@ select {
     flex-wrap: nowrap;
 }
 
-.social-1,
-.social-container,
 .member-container,
 .member-item,
 .contain,
@@ -258,12 +256,25 @@ select {
     flex-wrap: nowrap;
 }
 
-.social-container,
 .space,
 .space-social {
     display: inline-flex;
     justify-content: space-around;
     flex-wrap: nowrap;
+}
+
+.social-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.social-1 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 .column-container {
@@ -399,4 +410,51 @@ select {
 .circle-green-small:hover {
     width: 12px;
     height: 12px;
+}
+
+
+@media (min-width: 768px) {
+    .social-container {
+        display: inline-flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .social-1 {
+        display: inline-flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .container {
+        display: grid;
+        grid-auto-rows: minmax(150px, auto);
+        grid-template-columns: 100px 1fr 1fr;
+        grid-template-rows: 100px minmax(150px, auto);
+        grid-template-areas:
+                "header header header"
+                "nav main main"
+                "nav daily users"
+                "nav social social"
+                "nav members recent"
+                "nav message settings";
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-auto-rows: minmax(150px, auto);
+        grid-template-columns: 100px 1fr 1fr;
+        grid-template-rows: 100px minmax(150px, auto);
+        grid-template-areas:
+                "header header header"
+                "nav main main"
+                "nav daily users"
+                "nav social social"
+                "nav members recent"
+                "nav message settings";
+    }
 }
