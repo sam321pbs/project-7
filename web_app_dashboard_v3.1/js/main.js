@@ -97,3 +97,17 @@ function validateForm() {
     }
 }
 
+window.onbeforeprint = function(event) {
+    beforePrintHandler();
+};
+
+window.addEventListener("beforeprint", function(event) {
+    beforePrintHandler();
+});
+
+function beforePrintHandler () {
+    for (var id in Chart.instances) {
+        Chart.instances[id].resize();
+    }
+}
+
