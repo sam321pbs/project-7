@@ -6,6 +6,7 @@ var ageData = [500,1000,750,1250,1750,1500,1000,1500,2000,1500,2000];
 
 var lineChart = document.getElementById("lineChart");
 new Chart(lineChart, {
+    responsive: true,
     type: 'line',
     data: {
         labels: years,
@@ -36,6 +37,7 @@ var days = ["S", "M", "T","W","T","F","S"];
 var dayData = [50,75,150,125,200,175,75];
 var daily = document.getElementById("dailyTraffic");
 new Chart(daily, {
+    responsive: true,
     type: 'bar',
     data: {
         labels: days,
@@ -66,6 +68,7 @@ var mobile = ["Phones", "Tablets", "Desktop"];
 var mobileData = [70,15,15];
 var mobileUsers = document.getElementById("mobileUsers");
 new Chart(mobileUsers, {
+    responsive: true,
     type: 'doughnut',
     data: {
         labels: mobile,
@@ -94,6 +97,8 @@ function validateForm() {
 
     if (search.length === 0 || message.length === 0) {
         alert("User or message field is empty");
+    } else {
+        alert("Message sent!");
     }
 }
 
@@ -106,8 +111,10 @@ window.addEventListener("beforeprint", function(event) {
 });
 
 function beforePrintHandler () {
+    console.log("beforePrintHandler");
     for (var id in Chart.instances) {
         Chart.instances[id].resize();
+        console.log(id);
     }
 }
 
