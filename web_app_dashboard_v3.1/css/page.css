@@ -146,12 +146,18 @@ select {
     margin: 0px 10px;
     background-color: black;
 }
+
 .head {
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
+}
+
+.chart-wrapper {
+    height: auto;
+    width: 100%;
 }
 
 .account,
@@ -167,7 +173,7 @@ select {
     border-style: solid;
     border-color: #b0b0b0;
     padding: 3px;
-    width: 400px;
+    width: 250px;
 }
 
 .message-area {
@@ -220,7 +226,7 @@ select {
 }
 
 .alert {
-    width: 97%;
+    width: 95%;
 
     display: inline-flex;
     justify-content: space-between;
@@ -232,8 +238,8 @@ select {
     padding-bottom: 1px;
     padding-left: 10px;
     margin-top: 5px;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
 
     border-radius: 7px;
     background-color: var(--color-secondary);
@@ -412,8 +418,37 @@ select {
     height: 12px;
 }
 
-
 @media (min-width: 768px) {
+
+    .search-input {
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #b0b0b0;
+        padding: 3px;
+        width: 400px;
+    }
+
+    .alert {
+        width: 97%;
+
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 10px;
+        margin-top: 5px;
+        margin-right: 20px;
+        margin-left: 20px;
+
+        border-radius: 7px;
+        background-color: var(--color-secondary);
+
+    }
+
     .social-container {
         display: inline-flex;
         justify-content: space-around;
@@ -428,33 +463,8 @@ select {
         flex-direction: row;
     }
 
-    .container {
-        display: grid;
-        grid-auto-rows: minmax(150px, auto);
-        grid-template-columns: 100px 1fr 1fr;
-        grid-template-rows: 100px minmax(150px, auto);
-        grid-template-areas:
-                "header header header"
-                "nav main main"
-                "nav daily users"
-                "nav social social"
-                "nav members recent"
-                "nav message settings";
-    }
 }
 
 @media (min-width: 1024px) {
-    .container {
-        display: grid;
-        grid-auto-rows: minmax(150px, auto);
-        grid-template-columns: 100px 1fr 1fr;
-        grid-template-rows: 100px minmax(150px, auto);
-        grid-template-areas:
-                "header header header"
-                "nav main main"
-                "nav daily users"
-                "nav social social"
-                "nav members recent"
-                "nav message settings";
-    }
+
 }
